@@ -1,4 +1,5 @@
 #!/bin/bash
+cd $(dirname $(realpath "$0"))
 
 BACKUPS="$HOME/backups"
 mkdir -p $BACKUPS
