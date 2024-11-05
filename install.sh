@@ -4,13 +4,13 @@ BACKUPS="$HOME/backups"
 mkdir -p $BACKUPS
 
 move_file() {
-  if [ -f "$1" ]; then
+  if [ -f "$1" ] || [ -d "$1" ]; then
     mv "$1" "$2"
   fi
 }
 
 sym_link() {
-  if [ -f "$1" ]; then
+  if [ -f "$1" ] || [ -d "$1" ]; then
     mkdir -p $(dirname "$2")
     ln -s "$1" "$2"
   fi
